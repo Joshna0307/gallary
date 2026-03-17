@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stunning Image Gallery</title>
+    <meta name="description" content="A modern, responsive image gallery with filtering and lightbox support.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header class="gallery-header">
+        <h1>Visual Discoveries</h1>
+        <p>Explore our curated collection of stunning photography</p>
+    </header>
+
+    <main class="gallery-container">
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Photos</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="cities">Cities</button>
+            <button class="filter-btn" data-filter="animals">Animals</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="gallery-grid">
+
+            <!-- Nature Items -->
+            <div class="gallery-item" data-category="nature">
+                <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&q=80"
+                    alt="Beautiful landscape with mountains" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Majestic Mountains</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="nature">
+                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80"
+                    alt="Forest and road" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Into the Woods</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="nature">
+                <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80"
+                    alt="River in canyon" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">River Canyon</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="nature">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
+                    alt="Lush green forest track" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Forest Path</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="nature">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.UtA4P4cuMw093CAWPqlvygHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Autumn forest trees" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Autumn Trees</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="nature">
+                <img src="https://static.vecteezy.com/system/resources/previews/073/753/806/large_2x/tranquil-alpine-lake-reflects-vibrant-sunrise-hues-amidst-misty-mountain-peaks-free-photo.jpeg"
+                    alt="Tranquil alpine lake" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Alpine Lake</span>
+                </div>
+            </div>
+
+            <!-- Cities Items -->
+            <div class="gallery-item" data-category="cities">
+                <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=800&q=80"
+                    alt="Cityscape at night" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Night Cityscape</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cities">
+                <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=800&q=80"
+                    alt="Skyscrapers" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Concrete Jungle</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cities">
+                <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=80"
+                    alt="City street" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Urban Exploration</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cities">
+                <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=800&q=80"
+                    alt="Chicago skyline" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Steel Architecture</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cities">
+                <img src="https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?auto=format&fit=crop&w=800&q=80"
+                    alt="Bustling city street" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">City Pulse</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cities">
+                <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=800&q=80"
+                    alt="Neon lights in the city" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Neon Nights</span>
+                </div>
+            </div>
+
+            <!-- Animals Items -->
+            <div class="gallery-item" data-category="animals">
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
+                    alt="Cat looking at camera" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Curious Feline</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="animals">
+                <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80"
+                    alt="Dog running" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Happy Dog</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="animals">
+                <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=800&q=80"
+                    alt="Wild deer" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Wild Deer</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="animals">
+                <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=800&q=80"
+                    alt="Red fox in the wild" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Red Fox</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="animals">
+                <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=800&q=80"
+                    alt="Lion roaring" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">King of beasts</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="animals">
+                <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80"
+                    alt="Cute puppy dog" loading="lazy">
+                <div class="item-overlay">
+                    <span class="caption">Playful Puppy</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image Lightbox">
+        <div class="lightbox-content">
+            <button class="close-btn" id="close-lightbox" aria-label="Close Lightbox">&times;</button>
+            <button class="nav-btn prev-btn" id="prev-btn" aria-label="Previous Image">&#10094;</button>
+
+            <img src="" alt="Lightbox Image" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+
+            <button class="nav-btn next-btn" id="next-btn" aria-label="Next Image">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
